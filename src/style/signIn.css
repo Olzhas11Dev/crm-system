@@ -1,0 +1,98 @@
+body {
+  background: rgba(95, 142, 220, 1);
+}
+
+.signIn_main {
+  width: 100%;
+  height: 100vh;
+  background: rgba(95, 142, 220, 1);
+}
+
+.signIn_card {
+  width: 400px;
+  height: 350px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 15px;
+  margin: 140px auto;
+}
+
+.signIn_card h1 {
+  padding-top: 40px;
+  text-align: center;
+  font-weight: 500;
+  color: rgba(22, 40, 112, 1);
+}
+
+.signIn_container {
+  width: 80%;
+  margin: auto;
+}
+
+.sign_row {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.signIn_line_active {
+  display: flex;
+}
+.signIn_left {
+  margin-top: 15px;
+  width: 50%;
+  height: 3px;
+  background: rgb(209, 209, 209);
+}
+
+.signIn_right {
+  margin-top: 15px;
+  width: 50%;
+  height: 3px;
+
+  background: rgba(22, 40, 112, 1);
+}
+
+.sign_row a {
+  text-decoration: none;
+  font-weight: 500;
+  color: rgba(22, 40, 112, 1);
+}
+
+.sign_input_section {
+  margin-top: 20px;
+}
+
+.sign_input_section input {
+  padding-left: 10px;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid rgba(181, 181, 181, 1);
+}
+
+.sign_agree {
+  display: flex;
+  font-size: 10px;
+}
+
+.agree_text {
+  margin-left: 20px;
+}
+
+.btn_signUp {
+  height: 35px;
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 4px;
+  border: none;
+  background: #5087e1;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn_signUp:hover {
+  background: #4375c4;
+}
