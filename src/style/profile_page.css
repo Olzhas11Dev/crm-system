@@ -1,0 +1,43 @@
+.profile_main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: white;
+}
+
+.profile_left {
+  width: 20%;
+}
+
+.profile_right {
+  width: 80%;
+  background: #f8f9fb;
+}
+
+.left_content {
+  padding-left: 20px;
+}
+
+.profile_left h1 {
+  padding-top: 40px;
+  font-weight: 500;
+  color: rgba(22, 40, 112, 1);
+}
+
+.profile_left_name {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.left_circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  background: #ffe4b3;
+  margin-right: 20px;
+}
+
+.profile_left_icon {
+  display: flex;
+}
