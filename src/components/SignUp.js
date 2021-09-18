@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
 import '../style/signUp.css'
+import { useDispatch } from 'react-redux'
+import { addtoData } from './features/authSlice'
 
 
 function SignUp() {
@@ -11,7 +13,7 @@ function SignUp() {
     const[checkPass,setCheckPass] = useState('')
     const[passAlarm,setPassAlarm] = useState(false)
     
-    const [arr,setArr] = useState([])
+    const dispatch = useDispatch()
 
     const addData = ()=> {
         let object = {
@@ -23,7 +25,7 @@ function SignUp() {
         if(object.password!==object.checkPass){
             setPassAlarm(true)
         } else{
-            setArr([...arr,object])
+           dispatch(addtoData(object))
             setPassAlarm(false)
         }
         
@@ -48,12 +50,13 @@ function SignUp() {
                        <div className='signUp_right' ></div>
                    </div>
                    <div className="signUp_input_section">
-                       <input onChange={(e)=>setCompanyName(e.target.value)} type="text" placeholder='Company Name' value={companyName} />
-                       <input  onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Company Email' value={email}/>
-                       <input   onChange={(e)=>setPassword(e.target.value)}type="text" placeholder='Password' value={password}/>
-                       <input  onChange={(e)=>setCheckPass(e.target.value)}type="text" placeholder='Repeat Password' value={checkPass}/>
-                      <div className="password_answer">
-                      {passAlarm ? <div className='passwordAlarm'>Password doesn't much</div> : null}</div> 
+                        <input onChange={(e)=>setCompanyName(e.target.value)} type="text" placeholder='Company Name' value={companyName} />
+                        <input  onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Company Email' value={email}/>
+                        <input   onChange={(e)=>setPassword(e.target.value)}type="text" placeholder='Password' value={password}/>
+                        <input  onChange={(e)=>setCheckPass(e.target.value)}type="text" placeholder='Repeat Password' value={checkPass}/>
+                        <div className="password_answer">
+                             {passAlarm ? <div className='passwordAlarm'>Password doesn't much</div> : null}
+                        </div> 
                    </div>
                    <div className="signUp_agree ">
                        <input type="checkbox"/>
