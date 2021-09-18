@@ -1,10 +1,38 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
 import '../style/signUp.css'
 
 
 function SignUp() {
 
+    const[companyName,setCompanyName] = useState('')
+    const[email,setEmail] = useState('')
+    const[password,setPassword] = useState('')
+    const[checkPass,setCheckPass] = useState('')
+    const[passAlarm,setPassAlarm] = useState(false)
+    
+    const [arr,setArr] = useState([])
+
+    const addData = ()=> {
+        let object = {
+            id:Math.random(),
+            company:companyName,
+            password,checkPass
+        }
+
+        if(object.password!==object.checkPass){
+            setPassAlarm(true)
+        } else{
+            setArr([...arr,object])
+            setPassAlarm(false)
+        }
+        
+        setCompanyName('')
+        setEmail('')
+        setPassword('')
+        setCheckPass('')
+
+    }
 
     return (
         <div className='signUp_main' >
@@ -20,16 +48,18 @@ function SignUp() {
                        <div className='signUp_right' ></div>
                    </div>
                    <div className="signUp_input_section">
-                       <input type="text" placeholder='Company Name' />
-                       <input type="text" placeholder='Company Email' />
-                       <input type="text" placeholder='Password' />
-                       <input type="text" placeholder='Repeat Password'/>
+                       <input onChange={(e)=>setCompanyName(e.target.value)} type="text" placeholder='Company Name' value={companyName} />
+                       <input  onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Company Email' value={email}/>
+                       <input   onChange={(e)=>setPassword(e.target.value)}type="text" placeholder='Password' value={password}/>
+                       <input  onChange={(e)=>setCheckPass(e.target.value)}type="text" placeholder='Repeat Password' value={checkPass}/>
+                      <div className="password_answer">
+                      {passAlarm ? <div className='passwordAlarm'>Password doesn't much</div> : null}</div> 
                    </div>
                    <div className="signUp_agree ">
                        <input type="checkbox"/>
                        <div className='signUp_agree_text' >Agree with the User Agreement and Privacy Policy</div>
                    </div>
-                   <button className='signUp_btn_signUp btn_general' >SIGN UP</button>
+                   <button onClick={addData} className='signUp_btn_signUp btn_general' >SIGN UP</button>
                </div>
            </div>
         </div>

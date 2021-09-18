@@ -6,11 +6,11 @@ import ProfilePage from './components/ProfilePage';
 
 function App() {
 
-  const hystory = useHistory()
+  const history = useHistory()
 
-  // useEffect(()=>{
-  //     hystory.push('/')
-  // },[hystory])
+  useEffect(()=>{
+      history.push('/')
+  },[history])
   
   return (
     <div className="App">
